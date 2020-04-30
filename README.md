@@ -110,7 +110,7 @@ Un « protocol » différent de `up` indique la plupart du temps que l’interfa
 
 ---
 
-**Réponse :**  
+**Réponse :** Non, l'import dans EVE s'est faite sans problème.
 
 ---
 
