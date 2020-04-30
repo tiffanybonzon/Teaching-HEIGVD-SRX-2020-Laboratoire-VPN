@@ -147,7 +147,7 @@ Pour votre topologie il est utile de contrôler la connectivité entre :
 
 ---
 
-**Réponse :**  
+**Réponse :** Oui, tous les pings sont passés. 
 
 ---
 
