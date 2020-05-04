@@ -171,11 +171,11 @@ Pour déclencher et pratiquer les captures vous allez « pinger » votre routeur
 
 **Wireshark**
 
-![](.\images\Q3_R2_wireshark.png)
+![](./images/Q3_R2_wireshark.png)
 
 **R1**
 
-![](.\images\Q3_R1_debug.png)
+![](./images/Q3_R1_debug.png)
 
 ---
 
