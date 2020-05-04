@@ -246,7 +246,8 @@ Vous pouvez consulter l’état de votre configuration IKE avec les commandes su
 
 ---
 
-**Réponse :**  
+**Réponse :**  La commande nous montre la configuration des policy IKE que nous venons de configurer sur les 2 routeurs. Dans la policy de priorité 10 de R2, les paramètres utilisés sont outdated (3-DES, MD5, D-H de 1024 bit).
+D'après la documentation sur la cryptographie Cisco (https://tools.cisco.com/security/center/resources/next_generation_cryptography#14), le groupe Diffie-Hellman minimum acceptable est le groupe 15...aucune de nos policy ne respecte cette guideline. Le document nous conseille également d'utiliser AES comme algorithme de chiffrement, ce que les policies de priorité 20 font.
 
 ---
 
