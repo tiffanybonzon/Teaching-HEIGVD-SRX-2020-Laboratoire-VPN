@@ -256,7 +256,7 @@ D'après la documentation sur la cryptographie Cisco (https://tools.cisco.com/se
 
 ---
 
-**Réponse :**  La commande nous montre les pre-shared keys. La documentation Cisco (https://www.cisco.com/en/US/products/ps6017/products_command_reference_chapter09186a00808ab59a.html#wp1010892) indique que si la méthode d'autentification de la policy est "Pre-Shared Key" alors les deux routeurs doivent doivent être configurés avec cette clé pour que la policy fonctionne, ce qui a été fait.
+**Réponse :**  La commande nous montre la pre-shared key non chiffrée entre les deux routeurs qui est "cisco-1". La documentation Cisco (https://www.cisco.com/en/US/products/ps6017/products_command_reference_chapter09186a00808ab59a.html#wp1010892) indique que si la méthode d'autentification de la policy est "Pre-Shared Key" alors les deux routeurs doivent doivent être configurés avec cette clé pour que la policy fonctionne, ce qui a été fait.
 `no-xauth` devraitêtre indiqué lors de la configuration des pre-shared keys entre deux routeurs.
 
 ---
@@ -350,7 +350,9 @@ Pensez à démarrer votre sniffer sur la sortie du routeur R2 vers internet avan
 
 ---
 
-**Réponse :**  
+**Réponse :**  Lors de la configuration du lifetime, les routeurs nous indiquent que 2560 kB c'est peu. Une fois les deux configurations terminées, on constate que le trafic entre la station et le loopback de R1 est maintenant chiffré.
+
+![](./images/Q6_R2_Wireshark.png)
 
 ---
 
