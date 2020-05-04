@@ -42,7 +42,7 @@ Vous pouvez faire fonctionner ce labo sur vos propres machines à condition de c
 
 **Tuto d'installation** de la VM eve-ng : https://www.eve-ng.net/index.php/documentation/installation/virtual-machine-install/
 
-**Récupération de la VM pré-configurée** (vous ne pouvez pas utiliser la versión qui se trouve sur le site de eve-ng) : vous la trouverez sur \\eistore1\cours\iict\SRX\LaboVPn
+**Récupération de la VM pré-configurée** (vous ne pouvez pas utiliser la version qui se trouve sur le site de eve-ng) : vous la trouverez sur \\eistore1\cours\iict\SRX\LaboVPn
 
 Il est conseillé de passer la VM en mode "Bridge" si vous avez des problèmes. Le mode NAT **devrait** aussi fonctionner.
 
@@ -102,7 +102,7 @@ R1# show interface <interface-name>
 R1# show ip interface <interface-name>
 ```
 
-Un « status » différent de `up` indique très souvent que l’interface n’est pas active.
+debugUn « status » différent de `up` indique très souvent que l’interface n’est pas active.
 
 Un « protocol » différent de `up` indique la plupart du temps que l’interface n’est pas connectée correctement (en tout cas pour Ethernet).
 
@@ -147,7 +147,7 @@ Pour votre topologie il est utile de contrôler la connectivité entre :
 
 ---
 
-**Réponse :** Oui, tous les pings sont passés. 
+**Réponse :** Oui, tous les pings sont passés après avoir attribué une adresse via DHCP sur le poste VPC
 
 ---
 
@@ -165,12 +165,17 @@ Pour déclencher et pratiquer les captures vous allez « pinger » votre routeur
 -	Une trace sniffer (Wireshark) à la sortie du routeur R2 vers Internet. Si vous ne savez pas utiliser Wireshark avec eve-ng, référez-vous au document explicatif eve-ng. Le filtre de **capture** (attention, c'est un filtre de **capture** et pas un filtre d'affichage) suivant peut vous aider avec votre capture : `ip host 193.100.100.1`. 
 -	Les messages de R1 avec `debug ip icmp`.
 
-
 **Question 3: Montrez vous captures**
 
 ---
 
-**Screenshots :**  
+**Wireshark**
+
+![](.\images\Q3_R2_wireshark.png)
+
+**R1**
+
+![](.\images\Q3_R1_debug.png)
 
 ---
 
