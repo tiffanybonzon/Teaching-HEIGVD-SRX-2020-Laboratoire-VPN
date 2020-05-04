@@ -350,17 +350,29 @@ Pensez à démarrer votre sniffer sur la sortie du routeur R2 vers internet avan
 
 ---
 
-**Réponse :**  Lors de la configuration du lifetime, les routeurs nous indiquent que 2560 kB c'est peu. Une fois les deux configurations terminées, on constate que le trafic entre la station et le loopback de R1 est maintenant chiffré.
+**Réponse :**  Lors de la configuration du lifetime, les routeurs nous indiquent que 2560 kB c'est peu. Une fois les deux configurations terminées, on constate que le trafic entre la station et le loopback de R1 (à la sortie de R2) est maintenant chiffré.
 
 ![](./images/Q6_R2_Wireshark.png)
 
----
+
+
+En revanche le trafic reçu par R1 n'est pas chiffré
+
+![](./images/Q6_R1_Debug.png)
 
 **Question 7: Reportez dans votre rapport une petite explication concernant les différents « timers » utilisés par IKE et IPsec dans cet exercice (recherche Web). :**
 
 ---
 
 **Réponse :**  
+
+- IKE
+  - lifetime :  Indique la durée de vie des SA (https://www.cisco.com/c/en/us/td/docs/ios/12_2/security/command/reference/srfike.html#wp1018940)
+  - keepalive : Indique le nombre de secondes entre les messages keepalive (https://www.cisco.com/c/en/us/td/docs/ios/12_2/security/command/reference/srfike.html#wp1040415)
+- IPSec
+  - kilobytes : Indique que les SA seront regénérées tous les 2560 kB si 300 secondes n'ont pas déjà passé (https://www.cisco.com/c/en/us/td/docs/ios/12_2/security/command/reference/srfipsec.html#wp1017619)
+  - seconds : Indique que les SA seront regénérées toutes les 300 secondes si 2560 kB n'ont pas déjà été utilisée (https://www.cisco.com/c/en/us/td/docs/ios/12_2/security/command/reference/srfipsec.html#wp1017619)
+  - idle-time : Indique que si les SA ne sont pas utilisées pendant 900 secondes, elle sontsupprimées afin de libérer les resources. Elles sont recrées dès que nécessaire. (https://www.cisco.com/en/US/docs/ios-xml/ios/sec_conn_dplane/configuration/15-1s/sec-ipsec-idle-tmrs.html)
 
 ---
 
@@ -395,7 +407,6 @@ En vous appuyant sur les notions vues en cours et vos observations en laboratoir
 **Réponse :**  
 
 ---
-
 
 **Question 11: Expliquez quelles sont les parties du paquet qui sont authentifiées. Donnez l’algorithme cryptographique correspondant.**
 
