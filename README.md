@@ -256,7 +256,8 @@ D'après la documentation sur la cryptographie Cisco (https://tools.cisco.com/se
 
 ---
 
-**Réponse :**  
+**Réponse :**  La commande nous montre les pre-shared keys. La documentation Cisco (https://www.cisco.com/en/US/products/ps6017/products_command_reference_chapter09186a00808ab59a.html#wp1010892) indique que si la méthode d'autentification de la policy est "Pre-Shared Key" alors les deux routeurs doivent doivent être configurés avec cette clé pour que la policy fonctionne, ce qui a été fait.
+`no-xauth` devraitêtre indiqué lors de la configuration des pre-shared keys entre deux routeurs.
 
 ---
 
