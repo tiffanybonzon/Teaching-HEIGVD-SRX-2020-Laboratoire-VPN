@@ -110,7 +110,7 @@ Un « protocol » différent de `up` indique la plupart du temps que l’interfa
 
 ---
 
-**Réponse :** Non, l'import dans EVE s'est faite sans problème.
+**Réponse :** Non, l'import dans EVE s'est fait sans problème.
 
 ---
 
@@ -318,7 +318,7 @@ show crypto map
 ```
 
 ## Activation IPsec & test
-
+f
 Pour activer cette configuration IKE & IPsec il faut appliquer le « crypto map » sur l’interface de sortie du trafic où vous voulez que l’encryption prenne place. 
 
 Sur R1 il s’agit, selon le schéma, de l’interface « Ethernet0/0 » et la configuration sera :
@@ -386,7 +386,7 @@ En vous appuyant sur les notions vues en cours et vos observations en laboratoir
 
 ---
 
-**Réponse :**  
+**Réponse : on a utilisé IKE pour l'échange de clefs et ESP pour le chiffrement et l'authentification/intégrité des paquets.**  
 
 ---
 
@@ -395,7 +395,7 @@ En vous appuyant sur les notions vues en cours et vos observations en laboratoir
 
 ---
 
-**Réponse :**  
+**Réponse : dans la configuration IPsec, nous avons mis `mode tunnel` donc il s'agit d'un tunnel.**  
 
 ---
 
@@ -404,7 +404,7 @@ En vous appuyant sur les notions vues en cours et vos observations en laboratoir
 
 ---
 
-**Réponse :**  
+**Réponse : comme nous utilisons un mode tunnel, tout le paquet IP de base est chiffré et authentifié par le MAC puis encapsulé dans un nouveau paquet IP (et donc avec de nouveaux headers IP). Cela se fait avec AES-192 (esp-aes).**  
 
 ---
 
@@ -412,7 +412,7 @@ En vous appuyant sur les notions vues en cours et vos observations en laboratoir
 
 ---
 
-**Réponse :**  
+**Réponse : tout le paquet est utilisé pour l'opération cryptographique qui se fait avec esp-sha-hmac**
 
 ---
 
@@ -421,6 +421,6 @@ En vous appuyant sur les notions vues en cours et vos observations en laboratoir
 
 ---
 
-**Réponse :**  
+**Réponse : à nouveau, comme on utilise tout le paquet pour l'opération cryptographique, c'est aussi tout le paquet qui est vérifié pour son intégrité avec le même algorithme (esp-sha-hmac).**  
 
 ---
