@@ -386,7 +386,7 @@ En vous appuyant sur les notions vues en cours et vos observations en laboratoir
 
 ---
 
-**Réponse :** on a utilisé IKE pour l'échange de clefs et ESP pour le chiffrement et l'authentification/intégrité des paquets.
+**Réponse :** on a utilisé IKE pour l'échange de clefs et ESP pour le chiffrement et l'authentification/intégrité des paquets, comme vu dans les screenshots Wireshark.
 
 ---
 
@@ -395,7 +395,7 @@ En vous appuyant sur les notions vues en cours et vos observations en laboratoir
 
 ---
 
-**Réponse :** dans la configuration IPsec, nous avons mis `mode tunnel` donc il s'agit d'un tunnel.
+**Réponse :** dans la configuration IPsec, nous avons mis `mode tunnel` donc il s'agit d'un tunnel. On voit également les headers IP changer sur les screenshots Wireshark.
 
 ---
 
