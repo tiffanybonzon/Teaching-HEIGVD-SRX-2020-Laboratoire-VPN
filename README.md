@@ -386,7 +386,7 @@ En vous appuyant sur les notions vues en cours et vos observations en laboratoir
 
 ---
 
-**Réponse : on a utilisé IKE pour l'échange de clefs et ESP pour le chiffrement et l'authentification/intégrité des paquets.**  
+**Réponse :** on a utilisé IKE pour l'échange de clefs et ESP pour le chiffrement et l'authentification/intégrité des paquets.
 
 ---
 
@@ -395,7 +395,7 @@ En vous appuyant sur les notions vues en cours et vos observations en laboratoir
 
 ---
 
-**Réponse : dans la configuration IPsec, nous avons mis `mode tunnel` donc il s'agit d'un tunnel.**  
+**Réponse :** dans la configuration IPsec, nous avons mis `mode tunnel` donc il s'agit d'un tunnel.
 
 ---
 
@@ -404,7 +404,7 @@ En vous appuyant sur les notions vues en cours et vos observations en laboratoir
 
 ---
 
-**Réponse : comme nous utilisons un mode tunnel, tout le paquet IP de base est chiffré et authentifié par le MAC puis encapsulé dans un nouveau paquet IP (et donc avec de nouveaux headers IP). Cela se fait avec AES-192 (esp-aes).**  
+**Réponse :** comme nous utilisons un mode tunnel, tout le paquet IP de base est chiffré et authentifié par le MAC puis encapsulé dans un nouveau paquet IP (et donc avec de nouveaux headers IP). Cela se fait avec AES-192 (esp-aes).
 
 ---
 
@@ -412,7 +412,7 @@ En vous appuyant sur les notions vues en cours et vos observations en laboratoir
 
 ---
 
-**Réponse : tout le paquet est utilisé pour l'opération cryptographique qui se fait avec esp-sha-hmac**
+**Réponse :** tout le paquet est utilisé pour l'opération cryptographique qui se fait avec esp-sha-hmac
 
 ---
 
@@ -421,6 +421,6 @@ En vous appuyant sur les notions vues en cours et vos observations en laboratoir
 
 ---
 
-**Réponse : à nouveau, comme on utilise tout le paquet pour l'opération cryptographique, c'est aussi tout le paquet qui est vérifié pour son intégrité avec le même algorithme (esp-sha-hmac).**  
+**Réponse :** à nouveau, comme on utilise tout le paquet pour l'opération cryptographique, c'est aussi tout le paquet qui est vérifié pour son intégrité avec le même algorithme (esp-sha-hmac).
 
 ---
