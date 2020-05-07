@@ -397,7 +397,7 @@ En vous appuyant sur les notions vues en cours et vos observations en laboratoir
 
 **Réponse :** dans la configuration IPsec, nous avons mis `mode tunnel` donc il s'agit d'un tunnel. On voit également les headers IP changer sur les screenshots Wireshark.
 
-[Tunnel](images/tunnel.jpg)
+![Tunnel](images/tunnel.jpg)
 
 ---
 
