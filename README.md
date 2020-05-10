@@ -211,7 +211,7 @@ Sur le routeur R1 nous activons un « proposal » IKE. Il s’agit de la configu
 Les commandes de configurations sur R1 ressembleront à ce qui suit :
 
 ```
-crypto isakmp policy 20
+crypto isakmp policy 20XYZeke
   encr aes 256
   authentication pre-share
   hash sha
@@ -414,7 +414,7 @@ En vous appuyant sur les notions vues en cours et vos observations en laboratoir
 
 ---
 
-**Réponse :** tout le paquet est utilisé pour l'opération cryptographique qui se fait avec esp-sha-hmac
+**Réponse :** tout le paquet est utilisé pour l'opération cryptographique qui se fait avec esp-sha-hmac. Additionnellement une partie du nouvel en-tête est authentifiée (voir image réponse 9).
 
 ---
 
@@ -424,5 +424,9 @@ En vous appuyant sur les notions vues en cours et vos observations en laboratoir
 ---
 
 **Réponse :** à nouveau, comme on utilise tout le paquet pour l'opération cryptographique, c'est aussi tout le paquet qui est vérifié pour son intégrité avec le même algorithme (esp-sha-hmac).
+
+Le schéma ci-dessous (issu du cours à nouveau) illustre ce fonctionnement
+
+![ESP](images/esp.jpg)
 
 ---
