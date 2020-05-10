@@ -165,7 +165,7 @@ Pour déclencher et pratiquer les captures vous allez « pinger » votre routeur
 -	Une trace sniffer (Wireshark) à la sortie du routeur R2 vers Internet. Si vous ne savez pas utiliser Wireshark avec eve-ng, référez-vous au document explicatif eve-ng. Le filtre de **capture** (attention, c'est un filtre de **capture** et pas un filtre d'affichage) suivant peut vous aider avec votre capture : `ip host 193.100.100.1`. 
 -	Les messages de R1 avec `debug ip icmp`.
 
-**Question 3: Montrez vous captures**
+**Question 3: Montrez vos captures**
 
 ---
 
@@ -318,7 +318,6 @@ show crypto map
 ```
 
 ## Activation IPsec & test
-f
 Pour activer cette configuration IKE & IPsec il faut appliquer le « crypto map » sur l’interface de sortie du trafic où vous voulez que l’encryption prenne place. 
 
 Sur R1 il s’agit, selon le schéma, de l’interface « Ethernet0/0 » et la configuration sera :
@@ -356,7 +355,7 @@ Pensez à démarrer votre sniffer sur la sortie du routeur R2 vers internet avan
 
 
 
-En revanche le trafic reçu par R1 n'est pas chiffré
+En revanche le trafic reçu par R1 n'est pas chiffré, donc le tunnel fonctionne comme prévu
 
 ![](./images/Q6_R1_Debug.png)
 
@@ -386,7 +385,7 @@ En vous appuyant sur les notions vues en cours et vos observations en laboratoir
 
 ---
 
-**Réponse :** on a utilisé IKE pour l'échange de clefs et ESP pour le chiffrement et l'authentification/intégrité des paquets, comme vu dans les screenshots Wireshark.
+**Réponse :** On a utilisé IKE pour l'échange de clefs et ESP pour le chiffrement et l'authentification/intégrité des paquets, comme vu dans le screenshot Wireshark de la question 6.
 
 ---
 
@@ -395,7 +394,7 @@ En vous appuyant sur les notions vues en cours et vos observations en laboratoir
 
 ---
 
-**Réponse :** dans la configuration IPsec, nous avons mis `mode tunnel` donc il s'agit d'un tunnel. On voit également les headers IP changer sur les screenshots Wireshark.
+**Réponse :** Dans la configuration IPsec, nous avons mis `mode tunnel` donc il s'agit d'un tunnel. On voit également les headers IP changer sur les screenshots Wireshark.
 
 ![Tunnel](images/tunnel.jpg)
 
@@ -406,7 +405,7 @@ En vous appuyant sur les notions vues en cours et vos observations en laboratoir
 
 ---
 
-**Réponse :** comme nous utilisons un mode tunnel, tout le paquet IP de base est chiffré et authentifié par le MAC puis encapsulé dans un nouveau paquet IP (et donc avec de nouveaux headers IP). Cela se fait avec AES-192 (esp-aes).
+**Réponse :** Comme nous utilisons un mode tunnel, tout le paquet IP de base est chiffré et authentifié par le MAC puis encapsulé dans un nouveau paquet IP (et donc avec de nouveaux headers IP). Cela se fait avec AES-192 (esp-aes).
 
 ---
 
@@ -414,7 +413,7 @@ En vous appuyant sur les notions vues en cours et vos observations en laboratoir
 
 ---
 
-**Réponse :** tout le paquet est utilisé pour l'opération cryptographique qui se fait avec esp-sha-hmac. Additionnellement une partie du nouvel en-tête est authentifiée (voir image réponse 9).
+**Réponse :** Tout le paquet est utilisé pour l'opération cryptographique qui se fait avec esp-sha-hmac. Additionnellement une partie du nouvel en-tête est authentifiée (voir image réponse 9).
 
 ---
 
@@ -423,7 +422,7 @@ En vous appuyant sur les notions vues en cours et vos observations en laboratoir
 
 ---
 
-**Réponse :** à nouveau, comme on utilise tout le paquet pour l'opération cryptographique, c'est aussi tout le paquet qui est vérifié pour son intégrité avec le même algorithme (esp-sha-hmac).
+**Réponse :** À nouveau, comme on utilise tout le paquet pour l'opération cryptographique, c'est aussi tout le paquet qui est vérifié pour son intégrité avec le même algorithme (esp-sha-hmac).
 
 Le schéma ci-dessous (issu du cours à nouveau) illustre ce fonctionnement
 
